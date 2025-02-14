@@ -1,0 +1,86 @@
+body {
+    background-color: #fad7df; /* Fondo pastel */
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Agregar las imágenes laterales */
+  body::before, body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+    
+  body::before {
+    left: 0;
+    background-image: url('image5.jpg'); /* Ruta de la imagen izquierda */
+  }
+  
+  body::after {
+    right: 0;
+    background-image: url('image11.jpg'); /* Ruta de la imagen derecha */
+  }
+  
+  .message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Esto asegura que esté flotando en el medio */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Para centrarlo perfectamente */
+  }
+  
+  .message-box {
+    background: #ffffff; /* Caja blanca */
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+    animation: zoomIn 1.5s ease-out forwards;
+  }
+  
+  .message-box h1 {
+    font-size: 2rem;
+    color: #fe3334;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .message-box p {
+    font-size: 1.2rem;
+    color: #333333;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
